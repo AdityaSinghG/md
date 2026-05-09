@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Mother's Day, Maa ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d4416f;
+            --secondary: #f8b4d0;
+            --accent: #ffd5e5;
+            --dark: #2a1a2e;
+            --light: #fff8fb;
+            --gold: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: 'Crimson Text', serif;
+    background: linear-gradient(135deg, #fff8fb 0%, #ffe8f0 50%, #ffd5e5 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--dark);
+    position: relative;
+}
+
+/* Background photo overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 100%;
+    background-image: url('bp.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+    border-radius: 30px;
+    pointer-events: none;
+}
+
+        /* Floating hearts background */
+        .hearts-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: var(--secondary);
+            opacity: 0.3;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 80px 20px 60px;
+            animation: fadeInDown 1.2s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(212, 65, 111, 0.2);
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--primary);
+            font-style: italic;
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Photo Gallery */
+        .gallery-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .gallery-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease-out 1s both;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .photo-card {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 10px 40px rgba(212, 65, 111, 0.15);
+            transform: rotate(0deg);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: slideUp 0.8s ease-out both;
+        }
+
+        .photo-card:nth-child(1) { animation-delay: 1.2s; }
+        .photo-card:nth-child(2) { animation-delay: 1.4s; }
+        .photo-card:nth-child(3) { animation-delay: 1.6s; }
+        .photo-card:nth-child(4) { animation-delay: 1.8s; }
+        .photo-card:nth-child(5) { animation-delay: 2s; }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) rotate(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px) rotate(2deg) scale(1.03);
+            box-shadow: 0 20px 60px rgba(212, 65, 111, 0.25);
+        }
+
+        .photo-frame {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .photo-card:hover .photo-frame img {
+            transform: scale(1.1);
+        }
+
+        .photo-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--secondary);
+        }
+
+        .photo-caption {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--dark);
+            font-style: italic;
+        }
+
+        /* Message Section */
+        .message-section {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(212, 65, 111, 0.2);
+            animation: fadeIn 1s ease-out 2.5s both;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(248, 180, 208, 0.3);
+        }
+
+        .message-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .message-section p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-align: center;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1.2rem;
+            color: var(--primary);
+            animation: fadeIn 1s ease-out 3s both;
+        }
+
+        .footer .heart-icon {
+            display: inline-block;
+            color: var(--primary);
+            font-size: 2rem;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.1); }
+            20%, 40% { transform: scale(1.05); }
+        }
+
+        /* Instructions Box */
+        .instructions {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            border: 2px dashed var(--secondary);
+            animation: fadeIn 1s ease-out 3.5s both;
+        }
+
+        .instructions h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .instructions ol {
+            margin-left: 25px;
+            line-height: 1.8;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .instructions code {
+            background: var(--accent);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .message-section {
+                padding: 40px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="hearts-bg" id="heartsContainer"></div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Happy Mother's Day</h1>
+        <div class="subtitle">मां ❤️</div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery-container">
+        <h2 class="gallery-title">Our Beautiful Memories</h2>
+        
+        <div class="photo-grid">
+            <!-- Photo Card 1 -->
+            <div class="photo-card">
+                <div class="photo-frame">
+    <img src="p1.jpeg" alt="Memory 1">
+</div>
+                <div class="photo-caption">Beautiful moment together</div>
+            </div>
+
+            <!-- Photo Card 2 -->
+            <div class="photo-card">
+                <div class="photo-frame">
+    <img src="p2.jpeg" alt="Memory 1">
+</div>
+                <div class="photo-caption">Forever grateful</div>
+            </div>
+
+            <!-- Photo Card 3 -->
+            <div class="photo-card">
+                <div class="photo-frame">
+    <img src="p3.jpeg" alt="Memory 3">
+</div>
+                <div class="photo-caption">Love you always</div>
+            </div>
+
+            <!-- Photo Card 4 (Optional) -->
+            <div class="photo-card">
+                <div class="photo-frame">
+    <img src="p4.jpeg" alt="Memory 4">
+</div>
+                <div class="photo-caption">My superhero</div>
+            </div>
+
+            <!-- Photo Card 5 (Optional) -->
+            <div class="photo-card">
+                <div class="photo-frame">
+    <img src="p5.jpeg" alt="Memory 5">
+</div>
+                <div class="photo-caption">Best friend forever</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Section -->
+    <div class="message-section">
+    <h2>मेरी प्यारी माँ के लिए</h2>
+    <p>
+        जो भी आपने मेरे लिए किया है माँ, उसके लिए शुक्रिया।
+    </p>
+    <p>
+        Love you माँ ❤️
+    </p>
+</div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        Made with <span class="heart-icon">❤️</span> for the best Maa in the world
+    </div>
+
+    <script>
+        // Generate floating hearts
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            const heartSymbols = ['❤️', '💖', '💕', '💗', '🌸', '🌺'];
+            
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 15 + 's';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                container.appendChild(heart);
+            }
+        }
+
+        createHearts();
+    </script>
+</body>
+</html>
